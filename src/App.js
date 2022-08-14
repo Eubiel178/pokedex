@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { FiSearch } from 'react-icons/fi'
 
 import api from './services/api';
 
@@ -34,6 +35,7 @@ function App() {
 
         <form className='Form' onSubmit={SearchPokemon}>
           <input className='Input' onChange={e => setInput(e.target.value)} type='search' value={input} placeholder='id or name' required/>
+          <button className='Button'><FiSearch className='Icon'/></button>
         </form>
       </div>
     </main>

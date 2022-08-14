@@ -2,7 +2,7 @@
   padding: 1em;
   background-color: #fff;
   height: 15em;
-  width: 18em;
+  width: 20em;
   border-radius: 1.5em;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.253);
   position: relative;
@@ -19,12 +19,23 @@
   position: absolute;
   bottom: 1em;
   width: 90%;
+  display: flex;
 }
 
 .Input {
-  width: 100%;
+  width: 90%;
   border-radius: 1em;
   border: 1px solid rgba(0, 0, 0, 0.199);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.082), 2px 2px 2px rgba(0, 0, 0, 0.116);
   padding: 0.5em;
+}
+
+.Button {
+  background-color: #fff;
+  border: 0px;
+}
+
+.Icon {
+  font-size: 20px;
+  margin: 0.5em;
 }
