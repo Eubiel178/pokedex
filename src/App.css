@@ -1,23 +1,27 @@
 .Container {
   padding: 1em;
   background-color: #fff;
-  height: 15em;
+  height: 18em;
   width: 20em;
   border-radius: 1.5em;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.253);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 }
 
 .Image {
   width: 50%;
   display: block;
   margin: auto;
-  margin-bottom: 1em;
 }
 
+.PokemonName{
+  padding-top: 1em;
+} 
+
 .Form {
-  position: absolute;
-  bottom: 1em;
   width: 90%;
   display: flex;
 }
