@@ -1,7 +1,7 @@
 .Container {
   padding: 1em;
-  background-color: #fff;
-  height: 18em;
+  background-color: rgb(78, 74, 74);
+  height: 25em;
   width: 18em;
   border-radius: 1.5em;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.253);
@@ -11,13 +11,23 @@
 }
 
 .Image {
+  position: absolute;
+  bottom: 15%;
+  left: 25%;
   width: 50%;
-  display: block;
-  margin: auto;
+}
+
+.PokemonInfoContainer {
+  background-image: url(../public/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1em;
+  height: 18em;
+  position: relative;
 }
 
 .PokemonName{
-  padding-top: 1em;
+  padding:  1em 0em 0em 0.4em;
 } 
 
 .Form {

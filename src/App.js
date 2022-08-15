@@ -5,7 +5,7 @@ import { FiSearch } from 'react-icons/fi'
 import api from './services/api';
 
 function App() {
-  const[input, setInput] = useState()
+  const[input, setInput] = useState('')
   const[pokemonInfo, setPokemonInfo] = useState({})
   const[image, setImage] = useState('')
 
@@ -27,15 +27,17 @@ function App() {
         )}
 
         {pokemonInfo.status == 200  &&(
+          <section>
             <div className='PokemonInfoContainer'>
               <img className='Image' src={image}/>
-              <h3 className='PokemonName'>{pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}</h3>
             </div>
+
+            <h3 className='PokemonName'>{pokemonInfo.data.name.toLowerCase()} - {pokemonInfo.data.id}</h3>
+          </section>
           )}
 
         <form className='Form' onSubmit={SearchPokemon}>
           <input className='Input' onChange={e => setInput(e.target.value)} type='search' value={input} placeholder='id or name' required/>
-          <button className='Button'><FiSearch className='Icon'/></button>
         </form>
       </div>
     </main>
