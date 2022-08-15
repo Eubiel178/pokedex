@@ -33,7 +33,7 @@ function App() {
               <img className='Gif' src={image}/>
             </div>
 
-            <h3 className='PokemonName'>{pokemonInfo.data.name} - {pokemonInfo.data.id}</h3>
+            <h3 className='PokemonName'>{pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}</h3>
           </section>
           )}
 
