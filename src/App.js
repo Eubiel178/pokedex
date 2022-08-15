@@ -12,8 +12,10 @@ function App() {
     e.preventDefault()
     const pokemon = input.toLowerCase()
     setInput("")
+    
     const response = await api.get(`/${pokemon}`)
     let image =  await response.data.sprites.versions['generation-v']['black-white']['animated']['front_default']
+    
     setPokemonInfo(response)
     setImage(image)
   }
@@ -31,7 +33,7 @@ function App() {
               <img className='Gif' src={image}/>
             </div>
 
-            <h3 className='PokemonName'>{pokemonInfo.data.name.toLowerCase()} - {pokemonInfo.data.id}</h3>
+            <h3 className='PokemonName'>{pokemonInfo.data.name} - {pokemonInfo.data.id}</h3>
           </section>
           )}
 
