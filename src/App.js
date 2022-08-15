@@ -29,7 +29,7 @@ function App() {
         {pokemonInfo.status == 200  &&(
           <section>
             <div className='PokemonInfoContainer'>
-              <img className='Image' src={image}/>
+              <img className='Gif' src={image}/>
             </div>
 
             <h3 className='PokemonName'>{pokemonInfo.data.name.toLowerCase()} - {pokemonInfo.data.id}</h3>
