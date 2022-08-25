@@ -1,7 +1,7 @@
-.Container {
+.appContainer {
   padding: 1em;
   background-color: rgb(78, 74, 74);
-  height: 25em;
+  height: 30em;
   width: 18em;
   border-radius: 1.5em;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.253);
@@ -11,6 +11,7 @@
 }
 
 .Image {
+  width: 100%;
   border-radius: 1.5em;
 }
 
@@ -42,14 +43,36 @@
 
 .Input {
   width: 100%;
-  border-radius: 1em;
-  border: 1px solid rgba(0, 0, 0, 0.199);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.082), 2px 2px 2px rgba(0, 0, 0, 0.116);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.089), 2px 2px 2px rgba(0, 0, 0, 0.116);
+  border: solid 1px rgba(0, 0, 0, 0.226);
   padding: 0.5em;
   outline: 0px;
+  margin-top: 1em;
+  background-color: rgb(180, 179, 179) ;
 }
 
-.Icon {
-  font-size: 20px;
-  margin: 0.5em 0em 0.5em 0.5em;
+.DivContainer {
+  height: 7em;
+}
+
+.SuggestionsList {
+  height: 5em;
+  width: 100%;
+  font-size: 14px;
+  background-color: rgb(109, 108, 108);
+  overflow: hidden;
+  overflow-y: auto;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.082);
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.SuggestionsList::-webkit-scrollbar {
+  display: none;
+}
+
+.SuggestionsItem {
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 0.5em;
 }
