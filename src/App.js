@@ -18,7 +18,7 @@ function App() {
     setFilterSearch(response.data.results)
 
     let pokemonsFiltred = filterSearch.filter((pokemon) => {
-      return pokemon.name.includes(input)
+      return pokemon.name.includes(input.toLowerCase())
     })
 
     setPokemons(pokemonsFiltred)
