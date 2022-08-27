@@ -75,7 +75,7 @@ function App() {
                     className='SuggestionsItem' 
                     pokemon={element.name}
                     setInput={setInput}
-                    SearchPokemon={SearchPokemon}
+                    SearchPokemon={SearchPokemon(e)}
                   />
                 ))}
               </div>
