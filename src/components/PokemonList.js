@@ -2,7 +2,7 @@ function PokemonList({className, pokemon, setInput,  SearchPokemon}) {
     function Suggestion(pokemon) {
         setInput(pokemon)
         
-        SearchPokemon(e)
+        SearchPokemon
     }
   
     return <p onClick={()=> Suggestion(pokemon)} className={className}>{pokemon}</p>
