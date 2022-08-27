@@ -1,5 +1,11 @@
 function PokemonList({className, pokemon, setInput}) {
-    return <p onClick={()=> setInput(pokemon)} className={className}>{pokemon}</p>
+    function Suggestion(pokemon) {
+        setInput(pokemon)
+        
+        SearchPokemon()
+    }
+  
+    return <p onClick={()=> Suggestion(pokemon)} className={className}>{pokemon}</p>
 }
 
 export default PokemonList
