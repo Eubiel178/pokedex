@@ -1,4 +1,4 @@
-function PokemonList({className, pokemon, setInput}) {
+function PokemonList({className, pokemon, setInput,  SearchPokemon}) {
     function Suggestion(pokemon) {
         setInput(pokemon)
         
