@@ -24,7 +24,6 @@ function App() {
 
     if(input.length > 1 && pokemonsFiltred.length > 0) {
       setPokemons(pokemonsFiltred)
-      console.log(pokemons)
     } else {
       setPokemons('')
     }
