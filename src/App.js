@@ -8,6 +8,7 @@ function App() {
   const[input, setInput] = useState('')
   const[pokemonInfo, setPokemonInfo] = useState({})
   const[image, setImage] = useState('')
+  const[notFound, setNotFound] = useState("Search...")
   const[filterSearch, setFilterSearch] = useState([])
   const[pokemons, setPokemons] = useState()
   
@@ -21,32 +22,42 @@ function App() {
       return pokemon.name.includes(input.toLowerCase())
     })
 
-    setPokemons(pokemonsFiltred)
+    if(input.length > 1 && pokemonsFiltred.length > 0) {
+      setPokemons(pokemonsFiltred)
+      console.log(pokemons)
+    } else {
+      setPokemons('')
+    }
   }
 
-  async function SearchPokemon(e) {
-    e.preventDefault()
+  async function SearchPokemon(event) {
+    event.preventDefault()
     const pokemon = input.toLowerCase()
     setInput("")
     
-    const response = await api.get(`/${pokemon}`)
-    let image =  await response.data.sprites.versions['generation-v']['black-white']['animated']['front_default']
+    try {
+      const response = await api.get(`/${pokemon}`)
     
-    setPokemonInfo(response)
-    setImage(image)
-  }
+      setPokemonInfo(response)
+      setImage(response.data.sprites.versions['generation-v']['black-white']['animated']['front_default'])
+    } catch (error) {
+      setImage('')
+      setNotFound('Pokemon not found...')
+    }
+    }
+  
 
   return(
     <main>
-      <div className='appContainer'>
+      <div className='AppContainer'>
         {image == '' &&(
           <section>
             <img className='Image' src='./image.jpeg'/>
-            <h1 className='PokemonName'>Search...</h1>
+            <h3 className='PokemonName'>{notFound}</h3>
           </section>
         )}
 
-        {pokemonInfo.status == 200  &&(
+        {image != ''  &&(
           <section>
             <div className='PokemonInfoContainer'>
               <img className='Gif' src={image}/>
@@ -57,8 +68,8 @@ function App() {
           )}
 
           <div className='DivContainer'>
-            <form className='Form' onSubmit={SearchPokemon}>
-              <input 
+            <form onSubmit={SearchPokemon} className='Form'>
+              <input
                 className='Input' 
                 onChange={HandleSearch} 
                 type='search' 
@@ -68,13 +79,16 @@ function App() {
               />
             </form>
 
-            {input.length > 1 &&(
+            {pokemons &&(
               <div className='SuggestionsList'>
-                {pokemons.map(element => (
+                {pokemons.map((element, index) => (
                   <PokemonList 
                     className='SuggestionsItem' 
+                    id={index}
                     pokemon={element.name}
                     setInput={setInput}
+                    setPokemons={setPokemons}
+                    search={SearchPokemon}
                   />
                 ))}
               </div>
