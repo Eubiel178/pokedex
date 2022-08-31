@@ -35,7 +35,7 @@ function App() {
     let pokemon;
 
     if (suggestion) {
-      pokemon = suggestion.toLowerCase();
+      pokemon = suggestion;
     } else {
       pokemon = input.toLowerCase();
     }
