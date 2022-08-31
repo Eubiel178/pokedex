@@ -30,11 +30,11 @@
   width: 50%;
 }
 
-.PokemonName{
+.PokemonName {
   padding: 1em 0em 0em 0.4em;
   color: #fff;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.514);
-} 
+}
 
 .Form {
   width: 100%;
@@ -48,7 +48,7 @@
   padding: 0.5em;
   outline: 0px;
   margin-top: 1em;
-  background-color: rgb(180, 179, 179) ;
+  background-color: rgb(180, 179, 179);
 }
 
 .DivContainer {
@@ -69,10 +69,4 @@
 
 .SuggestionsList::-webkit-scrollbar {
   display: none;
-}
-
-.SuggestionsItem {
-  cursor: pointer;
-  color: #fff;
-  padding: 10px 0.5em;
 }
