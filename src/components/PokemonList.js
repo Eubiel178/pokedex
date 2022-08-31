@@ -1,17 +1,12 @@
 import Styles from "./PokemonList.module.css";
 
-function PokemonList({
-  className,
-  pokemon,
-  setInput,
-  setPokemons,
-  SearchPokemon,
-  id,
-}) {
+function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
   function Suggestion(event) {
     setInput(pokemon);
 
     setPokemons("");
+
+    SearchPokemon(event, pokemon);
   }
 
   return (

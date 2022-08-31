@@ -29,10 +29,17 @@ function App() {
     }
   }
 
-  async function SearchPokemon(event) {
+  async function SearchPokemon(event, suggestion) {
     event.preventDefault();
 
-    const pokemon = input.toLowerCase();
+    let pokemon;
+
+    if (suggestion) {
+      pokemon = suggestion.toLowerCase();
+    } else {
+      pokemon = input.toLowerCase();
+    }
+
     setInput("");
 
     try {
