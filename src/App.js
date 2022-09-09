@@ -73,7 +73,7 @@ function App() {
               <img className="Gif" src={image} />
             </div>
 
-            <h3 className="PokemonName">
+            <h3 translate="no" className="PokemonName">
               {pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}
             </h3>
           </section>
