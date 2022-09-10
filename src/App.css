@@ -16,7 +16,7 @@
 }
 
 .PokemonInfoContainer {
-  background-image: url(../public/background.jpg);
+  background-image: url(./images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 1em;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import api from "./services/api";
@@ -12,7 +12,7 @@ function App() {
   const [filterSearch, setFilterSearch] = useState([]);
   const [pokemons, setPokemons] = useState();
 
-  async function HandleSearch(event) {
+  const HandleSearch = async (event) => {
     setInput(event.target.value);
 
     const response = await api.get();
@@ -27,9 +27,9 @@ function App() {
     } else {
       setPokemons("");
     }
-  }
+  };
 
-  async function SearchPokemon(event, suggestion) {
+  const SearchPokemon = async (event, suggestion) => {
     event.preventDefault();
 
     let pokemon;
@@ -55,7 +55,13 @@ function App() {
       setImage("");
       setNotFound("Pokemon not found...");
     }
-  }
+  };
+
+  useEffect(() => {
+    if (input == "") {
+      setPokemons("");
+    }
+  });
 
   return (
     <main>

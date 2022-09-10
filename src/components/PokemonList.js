@@ -11,7 +11,12 @@ function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
 
   return (
     <div>
-      <button translate="no" className={Styles.Button} key={id} onClick={Suggestion}>
+      <button
+        translate="no"
+        className={Styles.Button}
+        key={id}
+        onClick={Suggestion}
+      >
         {pokemon}
       </button>
     </div>
