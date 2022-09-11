@@ -1,5 +1,13 @@
+import {
+  AppContainer,
+  Form,
+  Image,
+  PokemonInfoContainer,
+  DivContainer,
+  SuggestionsList,
+} from "./Styles";
+
 import { useState, useEffect } from "react";
-import "./App.css";
 
 import api from "./services/api";
 import PokemonList from "./components/PokemonList";
@@ -61,58 +69,55 @@ function App() {
     if (input == "") {
       setPokemons("");
     }
-  });
+  }, [input]);
 
   return (
-    <main>
-      <div className="AppContainer">
-        {image == "" && (
-          <section>
-            <img className="Image" src="./image.jpeg" />
-            <h3 className="PokemonName">{notFound}</h3>
-          </section>
+    <AppContainer>
+      {image == "" && (
+        <section>
+          <Image src="./images/image.jpeg" />
+          <h3>{notFound}</h3>
+        </section>
+      )}
+
+      {image != "" && (
+        <PokemonInfoContainer>
+          <div>
+            <img src={image} />
+          </div>
+
+          <h3 translate="no">
+            {pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}
+          </h3>
+        </PokemonInfoContainer>
+      )}
+
+      <DivContainer>
+        <Form onSubmit={SearchPokemon}>
+          <input
+            onChange={HandleSearch}
+            type="search"
+            value={input}
+            placeholder="id or name"
+            required
+          />
+        </Form>
+
+        {pokemons && (
+          <SuggestionsList>
+            {pokemons.map((element, index) => (
+              <PokemonList
+                id={index}
+                pokemon={element.name}
+                setInput={setInput}
+                setPokemons={setPokemons}
+                SearchPokemon={SearchPokemon}
+              />
+            ))}
+          </SuggestionsList>
         )}
-
-        {image != "" && (
-          <section>
-            <div className="PokemonInfoContainer">
-              <img className="Gif" src={image} />
-            </div>
-
-            <h3 translate="no" className="PokemonName">
-              {pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}
-            </h3>
-          </section>
-        )}
-
-        <div className="DivContainer">
-          <form onSubmit={SearchPokemon} className="Form">
-            <input
-              className="Input"
-              onChange={HandleSearch}
-              type="search"
-              value={input}
-              placeholder="id or name"
-              required
-            />
-          </form>
-
-          {pokemons && (
-            <form className="SuggestionsList">
-              {pokemons.map((element, index) => (
-                <PokemonList
-                  id={index}
-                  pokemon={element.name}
-                  setInput={setInput}
-                  setPokemons={setPokemons}
-                  SearchPokemon={SearchPokemon}
-                />
-              ))}
-            </form>
-          )}
-        </div>
-      </div>
-    </main>
+      </DivContainer>
+    </AppContainer>
   );
 }
 

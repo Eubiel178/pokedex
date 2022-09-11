@@ -1,4 +1,4 @@
-import Styles from "./PokemonList.module.css";
+import { Button } from "./Styles";
 
 function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
   function Suggestion(event) {
@@ -11,14 +11,9 @@ function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
 
   return (
     <div>
-      <button
-        translate="no"
-        className={Styles.Button}
-        key={id}
-        onClick={Suggestion}
-      >
+      <Button translate="no" key={id} onClick={Suggestion}>
         {pokemon}
-      </button>
+      </Button>
     </div>
   );
 }
