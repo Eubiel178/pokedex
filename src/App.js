@@ -72,52 +72,54 @@ function App() {
   }, [input]);
 
   return (
-    <AppContainer>
-      {image == "" && (
-        <section>
-          <Image src="./images/image.jpeg" />
-          <h3>{notFound}</h3>
-        </section>
-      )}
-
-      {image != "" && (
-        <PokemonInfoContainer>
-          <div>
-            <img src={image} />
-          </div>
-
-          <h3 translate="no">
-            {pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}
-          </h3>
-        </PokemonInfoContainer>
-      )}
-
-      <DivContainer>
-        <Form onSubmit={SearchPokemon}>
-          <input
-            onChange={HandleSearch}
-            type="search"
-            value={input}
-            placeholder="id or name"
-            required
-          />
-        </Form>
-
-        {pokemons && (
-          <SuggestionsList>
-            {pokemons.map((element, index) => (
-              <PokemonList
-                id={index}
-                pokemon={element.name}
-                setInput={setInput}
-                setPokemons={setPokemons}
-                SearchPokemon={SearchPokemon}
-              />
-            ))}
-          </SuggestionsList>
+    <main>
+      <AppContainer>
+        {image == "" && (
+          <section>
+            <Image src="./images/image.jpeg" />
+            <h3>{notFound}</h3>
+          </section>
         )}
-      </DivContainer>
-    </AppContainer>
+
+        {image != "" && (
+          <PokemonInfoContainer>
+            <div>
+              <img src={image} />
+            </div>
+
+            <h3 translate="no">
+              {pokemonInfo.data.name.toUpperCase()} - {pokemonInfo.data.id}
+            </h3>
+          </PokemonInfoContainer>
+        )}
+
+        <DivContainer>
+          <Form onSubmit={SearchPokemon}>
+            <input
+              onChange={HandleSearch}
+              type="search"
+              value={input}
+              placeholder="id or name"
+              required
+            />
+          </Form>
+
+          {pokemons && (
+            <SuggestionsList>
+              {pokemons.map((element, index) => (
+                <PokemonList
+                  id={index}
+                  pokemon={element.name}
+                  setInput={setInput}
+                  setPokemons={setPokemons}
+                  SearchPokemon={SearchPokemon}
+                />
+              ))}
+            </SuggestionsList>
+          )}
+        </DivContainer>
+      </AppContainer>
+    </main>
   );
 }
 
