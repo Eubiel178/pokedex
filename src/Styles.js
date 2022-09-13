@@ -10,6 +10,12 @@ export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  h3 {
+    padding: 1em 0em 0em 0.4em;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.514);
+  }
 `;
 
 export const Image = styled.img`
@@ -32,12 +38,6 @@ export const PokemonInfoContainer = styled.div`
     bottom: 15%;
     left: 25%;
     width: 50%;
-  }
-
-  h3 {
-    padding: 1em 0em 0em 0.4em;
-    color: #fff;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.514);
   }
 `;
 

@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import api from "./services/api";
 import PokemonList from "./components/PokemonList";
 
-function App() {
+const App = () => {
   const [input, setInput] = useState("");
   const [pokemonInfo, setPokemonInfo] = useState({});
   const [image, setImage] = useState("");
@@ -121,6 +121,6 @@ function App() {
       </AppContainer>
     </main>
   );
-}
+};
 
 export default App;

@@ -1,13 +1,13 @@
 import { Button } from "./Styles";
 
-function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
-  function Suggestion(event) {
+const PokemonList = ({ pokemon, setInput, setPokemons, SearchPokemon, id }) => {
+  const Suggestion = (event) => {
     setInput(pokemon);
 
     setPokemons("");
 
     SearchPokemon(event, pokemon);
-  }
+  };
 
   return (
     <div>
@@ -16,6 +16,6 @@ function PokemonList({ pokemon, setInput, setPokemons, SearchPokemon, id }) {
       </Button>
     </div>
   );
-}
+};
 
 export default PokemonList;
